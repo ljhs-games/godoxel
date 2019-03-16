@@ -1,14 +1,16 @@
 extends Spatial
 
 const LOOK_SPEED = 0.005
+const ZOOM_SPEED = 2
 
 onready var cur_state = null setget _set_state
+onready var camera = $Camera
 
 var look_x = 0.0
 var look_y = 0.0
 
 func _ready():
-	self.cur_state = $StateNothing
+	self.cur_state = $StateScroll
 	set_process_input(true)
 	set_physics_process(true)
 

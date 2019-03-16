@@ -3,7 +3,7 @@ extends Node
 const camera_controller_type = preload("res://camera/CameraController.gd")
 
 func into():
-	Input.set_custom_mouse_cursor(null, Input.CURSOR_IBEAM)
+	Input.set_default_cursor_shape(Input.CURSOR_IBEAM)
 
 func process_input(context: camera_controller_type, event: InputEvent):
 	if event is InputEventMouseMotion:
@@ -19,7 +19,7 @@ func process_input(context: camera_controller_type, event: InputEvent):
 		context.rotate_object_local(Vector3(0, 1, 0), -context.look_x)
 		context.rotate_object_local(to_the_right, context.look_y)
 	elif event.is_action_released("g_rotate_about"):
-		context.cur_state = context.get_node("StateNothing")
+		context.cur_state = context.get_node("StateScroll")
 
 func process_reference_input(_context: camera_controller_type, _event: InputEvent):
 	pass
