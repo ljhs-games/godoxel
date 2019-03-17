@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://camera/CameraController.gd" type="Script" id=1]
-[ext_resource path="res://camera/StateRotateAbout.gd" type="Script" id=2]
-[ext_resource path="res://camera/StateScroll.gd" type="Script" id=3]
-[ext_resource path="res://FadingPlane.gd" type="Script" id=4]
+[ext_resource path="res://camera/StateNormal.gd" type="Script" id=2]
+[ext_resource path="res://FadingPlane.gd" type="Script" id=3]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type spatial;
@@ -156,17 +155,14 @@ script = ExtResource( 1 )
 [node name="Camera" type="Camera" parent="CameraController"]
 transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 6, 6 )
 
-[node name="StateRotateAbout" type="Node" parent="CameraController"]
+[node name="StateNormal" type="Node" parent="CameraController"]
 script = ExtResource( 2 )
-
-[node name="StateScroll" type="Node" parent="CameraController"]
-script = ExtResource( 3 )
 
 [node name="FadingPlane" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.001, 0 )
 mesh = SubResource( 3 )
 material/0 = null
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 camera_path = NodePath("../CameraController/Camera")
 
 [node name="FadeTween" type="Tween" parent="FadingPlane"]

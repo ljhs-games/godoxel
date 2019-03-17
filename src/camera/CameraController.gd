@@ -10,7 +10,7 @@ var look_x = 0.0
 var look_y = 0.0
 
 func _ready():
-	self.cur_state = $StateScroll
+	self.cur_state = $StateNormal
 	set_process_input(true)
 	set_physics_process(true)
 
