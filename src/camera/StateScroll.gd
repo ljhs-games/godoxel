@@ -4,7 +4,7 @@ const camera_controller_type = preload("res://camera/CameraController.gd")
 
 func into():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	Input.set_default_cursor_shape(Input.CURSOR_DRAG)
+#	Input.set_default_cursor_shape(Input.CURSOR_DRAG)
 
 func process_input(context: camera_controller_type, event: InputEvent):
 	if event.is_action_pressed("g_zoom_in"):

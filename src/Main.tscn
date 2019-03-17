@@ -71,6 +71,7 @@ material = SubResource( 2 )
 size = Vector2( 30, 30 )
 
 [sub_resource type="CubeMesh" id=4]
+size = Vector3( 1, 1, 1 )
 
 [sub_resource type="SpatialMaterial" id=5]
 
@@ -81,6 +82,8 @@ size = Vector2( 30, 30 )
 [node name="HSplitContainer" type="HSplitContainer" parent="GUI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="GUI/HSplitContainer"]
 margin_right = 45.0
@@ -160,7 +163,7 @@ script = ExtResource( 2 )
 script = ExtResource( 3 )
 
 [node name="FadingPlane" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.001, 0 )
 mesh = SubResource( 3 )
 material/0 = null
 script = ExtResource( 4 )
@@ -169,7 +172,7 @@ camera_path = NodePath("../CameraController/Camera")
 [node name="FadeTween" type="Tween" parent="FadingPlane"]
 
 [node name="Cube" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2026, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
 mesh = SubResource( 4 )
 material/0 = SubResource( 5 )
 

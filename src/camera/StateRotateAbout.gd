@@ -3,7 +3,8 @@ extends Node
 const camera_controller_type = preload("res://camera/CameraController.gd")
 
 func into():
-	Input.set_default_cursor_shape(Input.CURSOR_IBEAM)
+	pass
+#	Input.set_default_cursor_shape(Input.CURSOR_IBEAM)
 
 func process_input(context: camera_controller_type, event: InputEvent):
 	if event is InputEventMouseMotion:
