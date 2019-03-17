@@ -1,7 +1,7 @@
 extends Spatial
 
 const LOOK_SPEED = 0.005
-const ZOOM_SPEED = 2
+const ZOOM_SPEEDS = {"slow": 0.5, "normal": 1, "fast": 5}
 
 onready var cur_state = null setget _set_state
 onready var camera = $Camera
@@ -15,7 +15,7 @@ func _ready():
 	set_physics_process(true)
 
 func _input(event):
-	cur_state.process_input(self, event)
+	cur_state.process_input(event)
 
 func _set_state(new_state):
 	if cur_state != null:
@@ -24,4 +24,4 @@ func _set_state(new_state):
 	new_state.into()
 
 func _on_ReferenceRect_gui_input(event):
-	cur_state.process_reference_input(self, event)
+	cur_state.process_reference_input(event)
