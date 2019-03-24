@@ -1,12 +1,16 @@
 extends Spatial
 
 const LOOK_SPEED = 0.005
+const PAN_SPEED = 0.03
 const ZOOM_SPEEDS = {"slow": 0.5, "normal": 1, "fast": 5}
 
 onready var cur_state = null setget _set_state
+#warning-ignore:unused_class_variable
 onready var camera = $Camera
 
+#warning-ignore:unused_class_variable
 var look_x = 0.0
+#warning-ignore:unused_class_variable
 var look_y = 0.0
 
 func _ready():

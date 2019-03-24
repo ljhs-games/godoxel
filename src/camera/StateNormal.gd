@@ -11,6 +11,8 @@ func into():
 #	Input.set_default_cursor_shape(Input.CURSOR_IBEAM)
 
 func process_input(event: InputEvent):
+#	if event is InputEventMouseMotion and Input.is_action_pressed("g_pan_mouse_button") and Input.is_action_pressed("g_pan_key"):
+#		context.translate_object_local(Vector3(event.relative.x*context.PAN_SPEED,event.relative.y*context.PAN_SPEED, 0))
 	if event is InputEventMouseMotion and Input.is_action_pressed("g_rotate_about"):
 		context.look_x += event.relative.x * context.LOOK_SPEED
 		context.look_y += event.relative.y * context.LOOK_SPEED

@@ -1,14 +1,31 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://default_theme.tres" type="Theme" id=1]
-[ext_resource path="res://camera/CameraController.gd" type="Script" id=2]
-[ext_resource path="res://default_env.tres" type="Environment" id=3]
-[ext_resource path="res://Camera.gd" type="Script" id=4]
-[ext_resource path="res://camera/StateNormal.gd" type="Script" id=5]
-[ext_resource path="res://FadingPlane.gd" type="Script" id=6]
-[ext_resource path="res://Voxels.gd" type="Script" id=7]
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://default_theme.tres" type="Theme" id=2]
+[ext_resource path="res://ResetButton.gd" type="Script" id=3]
+[ext_resource path="res://camera/CameraController.gd" type="Script" id=4]
+[ext_resource path="res://default_env.tres" type="Environment" id=5]
+[ext_resource path="res://Camera.gd" type="Script" id=6]
+[ext_resource path="res://camera/StateNormal.gd" type="Script" id=7]
+[ext_resource path="res://FadingPlane.gd" type="Script" id=8]
+[ext_resource path="res://Voxels.gd" type="Script" id=9]
 
-[sub_resource type="Shader" id=1]
+[sub_resource type="Image" id=8]
+data = {
+"data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 54, 54, 54, 0, 111, 111, 111, 0, 112, 112, 112, 0, 112, 112, 112, 0, 111, 111, 111, 0, 54, 54, 54, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 167, 167, 167, 6, 220, 220, 220, 107, 223, 223, 223, 199, 223, 223, 223, 241, 223, 223, 223, 241, 223, 223, 223, 199, 220, 220, 220, 107, 167, 167, 167, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 167, 167, 167, 26, 223, 223, 223, 205, 223, 223, 223, 254, 223, 223, 223, 254, 223, 223, 223, 254, 223, 223, 223, 254, 223, 223, 223, 254, 223, 223, 223, 254, 223, 223, 223, 205, 167, 167, 167, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 167, 167, 167, 6, 223, 223, 223, 205, 223, 223, 223, 254, 223, 223, 223, 226, 213, 213, 213, 88, 222, 222, 222, 25, 222, 222, 222, 25, 213, 213, 213, 88, 223, 223, 223, 226, 223, 223, 223, 254, 223, 223, 223, 205, 167, 167, 167, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 54, 54, 54, 0, 219, 219, 219, 106, 223, 223, 223, 254, 223, 223, 223, 226, 167, 167, 167, 18, 50, 50, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 50, 50, 0, 167, 167, 167, 18, 223, 223, 223, 226, 223, 223, 223, 254, 219, 219, 219, 106, 54, 54, 54, 0, 0, 0, 0, 0, 0, 0, 0, 0, 112, 112, 112, 0, 223, 223, 223, 197, 223, 223, 223, 254, 213, 213, 213, 88, 50, 50, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 51, 51, 51, 0, 216, 216, 216, 88, 223, 223, 223, 254, 223, 223, 223, 197, 112, 112, 112, 0, 0, 0, 0, 0, 112, 112, 112, 0, 167, 167, 167, 0, 223, 223, 223, 240, 223, 223, 223, 254, 223, 223, 223, 25, 111, 111, 111, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 223, 223, 223, 25, 223, 223, 223, 254, 223, 223, 223, 240, 111, 111, 111, 0, 104, 104, 104, 0, 215, 215, 215, 149, 223, 223, 223, 254, 223, 223, 223, 254, 223, 223, 223, 254, 223, 223, 223, 254, 220, 220, 220, 162, 109, 109, 109, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 223, 223, 223, 24, 223, 223, 223, 254, 223, 223, 223, 240, 111, 111, 111, 0, 0, 0, 0, 0, 162, 162, 162, 8, 223, 223, 223, 205, 223, 223, 223, 254, 223, 223, 223, 254, 223, 223, 223, 215, 165, 165, 165, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 56, 56, 56, 0, 223, 223, 223, 86, 223, 223, 223, 254, 223, 223, 223, 197, 112, 112, 112, 0, 0, 0, 0, 0, 0, 0, 0, 0, 207, 207, 207, 36, 223, 223, 223, 240, 223, 223, 223, 245, 217, 217, 217, 45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 50, 50, 0, 167, 167, 167, 18, 223, 223, 223, 225, 223, 223, 223, 254, 220, 220, 220, 107, 54, 54, 54, 0, 0, 0, 0, 0, 0, 0, 0, 0, 52, 52, 52, 0, 222, 222, 222, 86, 222, 222, 222, 99, 54, 54, 54, 0, 0, 0, 0, 0, 0, 0, 0, 0, 56, 56, 56, 0, 222, 222, 222, 25, 213, 213, 213, 88, 223, 223, 223, 226, 223, 223, 223, 254, 223, 223, 223, 205, 162, 162, 162, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 55, 55, 55, 0, 56, 56, 56, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 112, 112, 112, 0, 223, 223, 223, 254, 223, 223, 223, 254, 223, 223, 223, 254, 223, 223, 223, 205, 167, 167, 167, 27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 112, 112, 112, 0, 223, 223, 223, 241, 223, 223, 223, 199, 220, 220, 220, 107, 167, 167, 167, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 112, 112, 112, 0, 111, 111, 111, 0, 54, 54, 54, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="ImageTexture" id=2]
+flags = 0
+flags = 0
+image = SubResource( 8 )
+size = Vector2( 16, 16 )
+
+[sub_resource type="Shader" id=3]
 code = "shader_type spatial;
 render_mode blend_mix,depth_draw_opaque,cull_disabled,diffuse_burley,specular_schlick_ggx;
 uniform float opacity : hint_range(0,1);
@@ -52,8 +69,8 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
 shader_param/opacity = 1.0
 shader_param/albedo = Color( 0.784314, 0.784314, 0.784314, 1 )
 shader_param/specular = 0.5
@@ -69,139 +86,250 @@ shader_param/uv1_offset = Vector3( 0, 0, 0 )
 shader_param/uv2_scale = Vector3( 1, 1, 1 )
 shader_param/uv2_offset = Vector3( 0, 0, 0 )
 
-[sub_resource type="QuadMesh" id=3]
-material = SubResource( 2 )
+[sub_resource type="QuadMesh" id=5]
+material = SubResource( 4 )
 size = Vector2( 20, 20 )
 
-[sub_resource type="CubeMesh" id=4]
+[sub_resource type="CubeMesh" id=6]
 size = Vector3( 1, 1, 1 )
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=7]
 
 [node name="Main" type="Spatial"]
+script = ExtResource( 1 )
+err_popup_path = NodePath("GUI/ThemeSetter/ErrorPopup")
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
-[node name="HSplitContainer" type="HSplitContainer" parent="GUI"]
+[node name="ThemeSetter" type="Control" parent="GUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/ThemeSetter"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 1 )
+custom_constants/separation = 0
 
-[node name="PanelContainer" type="PanelContainer" parent="GUI/HSplitContainer"]
-margin_right = 256.0
-margin_bottom = 600.0
+[node name="PanelContainer" type="PanelContainer" parent="GUI/ThemeSetter/VBoxContainer"]
+editor/display_folded = true
+margin_right = 1024.0
+margin_bottom = 37.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI/ThemeSetter/VBoxContainer/PanelContainer"]
+margin_right = 1024.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="GUI/HSplitContainer/PanelContainer"]
-margin_right = 256.0
+[node name="Button" type="MenuButton" parent="GUI/ThemeSetter/VBoxContainer/PanelContainer/HBoxContainer"]
+margin_right = 50.0
+margin_bottom = 37.0
+text = "File"
+
+[node name="HSplitContainer" type="HSplitContainer" parent="GUI/ThemeSetter/VBoxContainer"]
+margin_top = 37.0
+margin_right = 1024.0
 margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="GUI/ThemeSetter/VBoxContainer/HSplitContainer"]
+margin_right = 256.0
+margin_bottom = 563.0
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="GUI/ThemeSetter/VBoxContainer/HSplitContainer/PanelContainer"]
+margin_right = 256.0
+margin_bottom = 563.0
 size_flags_vertical = 3
 custom_constants/margin_right = 10
 custom_constants/margin_top = 10
 custom_constants/margin_left = 10
 custom_constants/margin_bottom = 10
 
-[node name="Buttons" type="VBoxContainer" parent="GUI/HSplitContainer/PanelContainer/MarginContainer"]
+[node name="Buttons" type="VBoxContainer" parent="GUI/ThemeSetter/VBoxContainer/HSplitContainer/PanelContainer/MarginContainer"]
+editor/display_folded = true
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 246.0
-margin_bottom = 590.0
+margin_bottom = 553.0
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="GUI/HSplitContainer/PanelContainer/MarginContainer/Buttons"]
+[node name="Label" type="Label" parent="GUI/ThemeSetter/VBoxContainer/HSplitContainer/PanelContainer/MarginContainer/Buttons"]
 margin_right = 236.0
 margin_bottom = 37.0
 text = "Set Enironment Color"
 align = 1
 
-[node name="SetEnvironmentColor" type="ColorPickerButton" parent="GUI/HSplitContainer/PanelContainer/MarginContainer/Buttons"]
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI/ThemeSetter/VBoxContainer/HSplitContainer/PanelContainer/MarginContainer/Buttons"]
 margin_top = 41.0
 margin_right = 236.0
-margin_bottom = 76.0
+margin_bottom = 78.0
 
-[node name="Button2" type="Button" parent="GUI/HSplitContainer/PanelContainer/MarginContainer/Buttons"]
-margin_top = 80.0
+[node name="SetEnvironmentColor" type="ColorPickerButton" parent="GUI/ThemeSetter/VBoxContainer/HSplitContainer/PanelContainer/MarginContainer/Buttons/HBoxContainer"]
+margin_right = 204.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+
+[node name="ResetButton" type="ToolButton" parent="GUI/ThemeSetter/VBoxContainer/HSplitContainer/PanelContainer/MarginContainer/Buttons/HBoxContainer"]
+margin_left = 208.0
 margin_right = 236.0
-margin_bottom = 176.0
+margin_bottom = 37.0
+icon = SubResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Button2" type="Button" parent="GUI/ThemeSetter/VBoxContainer/HSplitContainer/PanelContainer/MarginContainer/Buttons"]
+margin_top = 82.0
+margin_right = 236.0
+margin_bottom = 171.0
 size_flags_vertical = 3
 text = "test1"
 
-[node name="Button3" type="Button" parent="GUI/HSplitContainer/PanelContainer/MarginContainer/Buttons"]
-margin_top = 180.0
+[node name="Button3" type="Button" parent="GUI/ThemeSetter/VBoxContainer/HSplitContainer/PanelContainer/MarginContainer/Buttons"]
+margin_top = 175.0
 margin_right = 236.0
-margin_bottom = 276.0
+margin_bottom = 264.0
 size_flags_vertical = 3
 text = "test1"
 
-[node name="Button4" type="Button" parent="GUI/HSplitContainer/PanelContainer/MarginContainer/Buttons"]
-margin_top = 280.0
+[node name="Button4" type="Button" parent="GUI/ThemeSetter/VBoxContainer/HSplitContainer/PanelContainer/MarginContainer/Buttons"]
+margin_top = 268.0
 margin_right = 236.0
-margin_bottom = 376.0
+margin_bottom = 357.0
 size_flags_vertical = 3
 text = "test1"
 
-[node name="Button5" type="Button" parent="GUI/HSplitContainer/PanelContainer/MarginContainer/Buttons"]
-margin_top = 380.0
+[node name="Button5" type="Button" parent="GUI/ThemeSetter/VBoxContainer/HSplitContainer/PanelContainer/MarginContainer/Buttons"]
+margin_top = 361.0
 margin_right = 236.0
-margin_bottom = 476.0
+margin_bottom = 450.0
 size_flags_vertical = 3
 text = "test1"
 
-[node name="Button6" type="Button" parent="GUI/HSplitContainer/PanelContainer/MarginContainer/Buttons"]
-margin_top = 480.0
+[node name="Button6" type="Button" parent="GUI/ThemeSetter/VBoxContainer/HSplitContainer/PanelContainer/MarginContainer/Buttons"]
+margin_top = 454.0
 margin_right = 236.0
-margin_bottom = 580.0
+margin_bottom = 543.0
 size_flags_vertical = 3
 text = "test1"
 
-[node name="HSplitContainer" type="HSplitContainer" parent="GUI/HSplitContainer"]
+[node name="HSplitContainer" type="HSplitContainer" parent="GUI/ThemeSetter/VBoxContainer/HSplitContainer"]
 margin_left = 264.0
 margin_right = 1024.0
-margin_bottom = 600.0
+margin_bottom = 563.0
 mouse_filter = 1
-theme = ExtResource( 1 )
+theme = ExtResource( 2 )
 
-[node name="ReferenceRect" type="Control" parent="GUI/HSplitContainer/HSplitContainer"]
-margin_right = 686.0
-margin_bottom = 600.0
+[node name="ReferenceRect" type="Control" parent="GUI/ThemeSetter/VBoxContainer/HSplitContainer/HSplitContainer"]
+margin_right = 666.0
+margin_bottom = 563.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="test2" type="Button" parent="GUI/HSplitContainer/HSplitContainer"]
-margin_left = 694.0
+[node name="PanelContainer" type="PanelContainer" parent="GUI/ThemeSetter/VBoxContainer/HSplitContainer/HSplitContainer"]
+margin_left = 674.0
 margin_right = 760.0
-margin_bottom = 600.0
+margin_bottom = 563.0
+
+[node name="MarginContainer" type="MarginContainer" parent="GUI/ThemeSetter/VBoxContainer/HSplitContainer/HSplitContainer/PanelContainer"]
+margin_right = 86.0
+margin_bottom = 563.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="Buttons" type="VBoxContainer" parent="GUI/ThemeSetter/VBoxContainer/HSplitContainer/HSplitContainer/PanelContainer/MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 76.0
+margin_bottom = 553.0
+
+[node name="Button" type="Button" parent="GUI/ThemeSetter/VBoxContainer/HSplitContainer/HSplitContainer/PanelContainer/MarginContainer/Buttons"]
+margin_right = 66.0
+margin_bottom = 132.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "test2"
 
+[node name="Button2" type="Button" parent="GUI/ThemeSetter/VBoxContainer/HSplitContainer/HSplitContainer/PanelContainer/MarginContainer/Buttons"]
+margin_top = 136.0
+margin_right = 66.0
+margin_bottom = 268.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "test2"
+
+[node name="Button3" type="Button" parent="GUI/ThemeSetter/VBoxContainer/HSplitContainer/HSplitContainer/PanelContainer/MarginContainer/Buttons"]
+margin_top = 272.0
+margin_right = 66.0
+margin_bottom = 404.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "test2"
+
+[node name="Button4" type="Button" parent="GUI/ThemeSetter/VBoxContainer/HSplitContainer/HSplitContainer/PanelContainer/MarginContainer/Buttons"]
+margin_top = 408.0
+margin_right = 66.0
+margin_bottom = 543.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "test2"
+
+[node name="ErrorPopup" type="AcceptDialog" parent="GUI/ThemeSetter"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -52.5
+margin_top = -49.0
+margin_right = 52.5
+margin_bottom = 49.0
+resizable = true
+
+[node name="CreditsDialog" type="AcceptDialog" parent="GUI/ThemeSetter"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -336.0
+margin_top = -159.0
+margin_right = 336.0
+margin_bottom = 159.0
+window_title = "Credits"
+dialog_text = "Developed by creikey ( Cameron Reikes )
+Testing from Stving_Artist ( Lin )"
+
 [node name="CameraController" type="Spatial" parent="."]
-script = ExtResource( 2 )
+script = ExtResource( 4 )
 
 [node name="Camera" type="Camera" parent="CameraController"]
 transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 6, 6 )
-environment = ExtResource( 3 )
+environment = ExtResource( 5 )
 current = true
-script = ExtResource( 4 )
-color_picker_path = NodePath("../../GUI/HSplitContainer/PanelContainer/MarginContainer/Buttons/SetEnvironmentColor")
+script = ExtResource( 6 )
+color_picker_path = NodePath("../../GUI/ThemeSetter/VBoxContainer/HSplitContainer/PanelContainer/MarginContainer/Buttons/HBoxContainer/SetEnvironmentColor")
 
 [node name="StateNormal" type="Node" parent="CameraController"]
-script = ExtResource( 5 )
+script = ExtResource( 7 )
 
 [node name="FadingPlane" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.01, 0 )
-mesh = SubResource( 3 )
+mesh = SubResource( 5 )
 material/0 = null
-script = ExtResource( 6 )
+script = ExtResource( 8 )
 camera_path = NodePath("../CameraController/Camera")
 
 [node name="FadeTween" type="Tween" parent="FadingPlane"]
 
 [node name="Voxels" type="MeshInstance" parent="."]
-mesh = SubResource( 4 )
-material/0 = SubResource( 5 )
-script = ExtResource( 7 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+script = ExtResource( 9 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, -0.766044, 0.642788, 0, -0.642788, -0.766044, 0, 11, -17 )
@@ -210,4 +338,5 @@ shadow_enabled = true
 
 [node name="SkySpin" type="AnimationPlayer" parent="."]
 
-[connection signal="gui_input" from="GUI/HSplitContainer/HSplitContainer/ReferenceRect" to="CameraController" method="_on_ReferenceRect_gui_input"]
+[connection signal="pressed" from="GUI/ThemeSetter/VBoxContainer/HSplitContainer/PanelContainer/MarginContainer/Buttons/HBoxContainer/ResetButton" to="CameraController/Camera" method="_on_ResetButton_pressed"]
+[connection signal="gui_input" from="GUI/ThemeSetter/VBoxContainer/HSplitContainer/HSplitContainer/ReferenceRect" to="CameraController" method="_on_ReferenceRect_gui_input"]
